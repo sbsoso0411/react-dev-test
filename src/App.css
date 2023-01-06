@@ -28,6 +28,41 @@
   color: #61dafb;
 }
 
+#root {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttonA {
+  background-color: #46139f;
+  color: white;
+}
+
+.buttonA:hover {
+  color: #46139f;
+  background-color: white;
+  border: 1px solid #46139f;
+}
+
+.buttonB {
+  background-color: #ff7f50;
+  color: white;
+}
+
+.btn-close-modal {
+  background-color: white !important;
+  color: #46139f !important;
+  border: 1px solid #46139f !important;
+}
+
+.buttonB:hover {
+  color: #ff7f50;
+  background-color: white;
+  border: 1px solid #ff7f50;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +70,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.btn-lg{
+  width: 15rem;
+  height: 7rem;
+  font-size: 1.5rem;
+}
+
+.modal-footer {
+  justify-content: center;
 }
