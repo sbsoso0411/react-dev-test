@@ -1,13 +1,9 @@
-import './App.css';
-
-import React from 'react';
+import './App.scss';
 
 import MainPage from './pages/main';
 
-function App() {
+export default function App() {
   return <>
     <MainPage></MainPage>
   </>
 }
-
-export default App;

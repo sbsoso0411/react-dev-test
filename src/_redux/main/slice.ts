@@ -9,7 +9,12 @@ import * as Types from './types';
 // initial state of reducer
 const initialState: Types.MainState = {
   openedModal: null,
-  data: [],
+  pending: false,
+  data: {
+    total: 0,
+    contacts_ids: [],
+    contacts: {},
+  },
 }
 
 // create the slice
@@ -21,7 +26,11 @@ const slice = createSlice({
       const modalType = action.payload
       state.openedModal = modalType
     },
-    setData(state, action: PayloadAction<any>) {
+    setPending(state, action: PayloadAction<boolean>) {
+      const pending = action.payload
+      state.pending = pending
+    },
+    setData(state, action: PayloadAction<Types.APIRes>) {
       const data = action.payload
       state.data = data
     },
@@ -31,6 +40,7 @@ const slice = createSlice({
 // export the actions and reducer
 export const {
   openModal,
+  setPending,
   setData,
 } = slice.actions
 
