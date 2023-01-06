@@ -12,7 +12,7 @@ const initialState: Types.MainState = {
   pending: false,
   data: {
     total: 0,
-    contact_ids: [],
+    contacts_ids: [],
     contacts: {},
   },
 }

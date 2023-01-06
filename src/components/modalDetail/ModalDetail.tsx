@@ -16,13 +16,13 @@ export default function ModalB(props: ModalDetailProps) {
   const onCloseModal = useMemo<() => void>(() => props.dismiss, [props.dismiss])
 
   return <>
-    <Modal size="lg" centered show={show} onHide={onCloseModal} animation={false}>
+    <Modal size="lg" className='modal-c' centered show={show} onHide={onCloseModal} animation={false}>
       <Modal.Header>
         <Modal.Title>Detail</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
-        <Scrollbars style={{ width: '100%', height: '300px' }}>
+        <Scrollbars style={{ width: '100%', height: '500px' }}>
           {contact !== null && <Table bordered hover>
             <tbody>
               <tr>
