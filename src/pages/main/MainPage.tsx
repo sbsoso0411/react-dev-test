@@ -1,9 +1,5 @@
-import {
-  useCallback,
-  useEffect,
-} from 'react';
+import { useCallback } from 'react';
 
-import axios from 'axios';
 import {
   Button,
   Stack,
@@ -16,16 +12,10 @@ import {
   Routes,
 } from 'react-router-dom';
 
-import {
-  openModal,
-  setData,
-  setTotalCount,
-  setTotalData
-} from '../../_redux/main';
+import { openModal } from '../../_redux/main';
 import ModalA from '../../components/modalA';
 import ModalB from '../../components/modalB';
 import { MainPageProps } from './types';
-import apiClient from "../../axios";
 
 export default function MainPage(props: MainPageProps) {
   const dispatch = useDispatch()
@@ -41,7 +31,7 @@ export default function MainPage(props: MainPageProps) {
       12343,
       2341,
       12312,
-      34343
+      34343,
     ],
     "contacts": {  // this is a data of found contacts
       "745450": {
@@ -126,37 +116,6 @@ export default function MainPage(props: MainPageProps) {
       },
     }
   }
-
-  async function getAllData(filter: string) {
-    try {
-      const res = await apiClient.post(
-        "https://api.dev.pastorsline.com/api/contacts.json",
-        {
-          companyId: 171,
-          query: '',
-          page: 1,
-          countryId: '',
-        }
-      );
-
-      dispatch(setData(res))
-    } catch (err) {
-      console.log('error')
-    }
-  }
-
-  useEffect(() => {
-    getAllData('all')
-    let totalCount = temp.total
-    let contactIds = temp.contacts_ids
-    let datas = JSON.parse(JSON.stringify(temp.contacts))
-
-    let tempArr = []
-    for (let i = 0 ; i < contactIds.length ; i ++) {
-      tempArr.push(datas[contactIds[i]])
-    }
-    dispatch(setData(tempArr))
-  }, [])
 
   const handleModalABtnClick = useCallback(() => {
     dispatch(openModal('A'))

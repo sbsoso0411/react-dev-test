@@ -1,1 +1,4 @@
-export type BtnBarProps = {}
+export type BtnBarProps = {
+  onlyEven: boolean,
+  toogleOnlyEven: () => void,
+}

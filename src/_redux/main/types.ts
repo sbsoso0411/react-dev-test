@@ -1,14 +1,25 @@
 // ---------------- main redux ----------------
 export type MainState = {
   openedModal: ModalType,
-  themeColor: string,
-  data: any,
-  totalCount: number,
-  totalData: any,
-  totalIds: any,
-  detailData: any,
-  openedDetailModal: boolean,
-  evenFlag: boolean
+  pending: boolean,
+  data: APIRes,
 }
 
 export type ModalType = 'A' | 'B' | null
+
+export type APIRes = {
+  total: number,
+  contact_ids: number[],
+  contacts: {
+    [contact_id: number]: Contact
+  }
+}
+
+export type Contact = {
+  id: number,
+  first_name: string,
+  last_name: string,
+  email: string,
+  phone_number: string,
+  country_id: number,
+}
