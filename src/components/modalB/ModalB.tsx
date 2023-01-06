@@ -57,13 +57,16 @@ export default function ModalB(props: ModalBProps) {
     dispatch(setPending(true))
 
     try {
-      const res = await apiClient.post(
+      const res = await apiClient.get(
         "https://api.dev.pastorsline.com/api/contacts.json",
         {
-          companyId: 171,
-          query: query,
-          page: page,
-          countryId: 226,
+          headers: {},
+          params: {
+            companyId: 171,
+            query: query,
+            page: page,
+            countryId: 226,
+          }
         }
       );
 
