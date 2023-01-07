@@ -71,12 +71,11 @@ export default function ModalB(props: ModalBProps) {
       );
 
       // success
-      if (res.data.code === 200) {
+      if (res.data.total) {
         setPageNumber(page)
-        const _data: APIRes = res.data.data
+        console.log(res.data)
+        const _data: APIRes = res.data
         dispatch(setData(page !== 1 ? { ...data, contacts_ids: [...data.contacts_ids, ..._data.contacts_ids], contacts: { ...data.contacts, ..._data.contacts } } : _data))
-      } else {
-        // do nothing
       }
     } catch (err) {
       console.log('error')

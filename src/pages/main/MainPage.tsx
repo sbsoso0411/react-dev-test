@@ -46,7 +46,7 @@ export default function MainPage(props: MainPageProps) {
   }
 
   useEffect(() => {
-    dispatch(setData(data))
+    // dispatch(setData(data))
   }, [])
 
   const handleModalABtnClick = useCallback(() => {
