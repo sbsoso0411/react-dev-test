@@ -1,7 +1,7 @@
 # react-dev-test
 
 
-Run the normal version:
+Run with 30080 port:
 
 	git clone this repo
 
